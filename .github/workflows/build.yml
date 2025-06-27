@@ -36,6 +36,6 @@ jobs:
           directory: log/Pastebin
       - name: upload react app build
         run: |
-          gh release create "${{ github.run_number }}.0.0" index.zip
+          gh release create "${{ github.run_number }}.0.0" index.zip package-lock.json
         env:
           GITHUB_TOKEN: ${{ secrets.TK }}
