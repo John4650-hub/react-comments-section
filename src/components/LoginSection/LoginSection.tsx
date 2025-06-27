@@ -1,5 +1,7 @@
 import './LoginSection.scss'
 
+import React from 'react';
+
 interface LoginSectionProps {
   loginLink?: string | (() => void)
   signUpLink?: string | (() => void)
