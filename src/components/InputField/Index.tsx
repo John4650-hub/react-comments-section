@@ -1,7 +1,5 @@
 import './InputField.scss'
-import { useContext, useEffect, useState } from 'react'
 import { GlobalContext } from '../../context/Provider'
-import React from 'react'
 const { v4: uuidv4 } = require('uuid')
 import RegularInput from './RegularInput'
 import AdvancedInput from './AdvancedInput'
@@ -35,15 +33,15 @@ const InputField = ({
   imgDiv,
   placeHolder
 }: InputFieldProps) => {
-  const [text, setText] = useState('')
+  const [text, setText] = React.useState('')
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (fillerText) {
       setText(fillerText)
     }
   }, [fillerText])
 
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
 
   const editMode = async (advText?: string) => {
     const textToSend = advText ? advText : text

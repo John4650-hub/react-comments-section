@@ -1,8 +1,7 @@
-import React, { createContext, useEffect, useState } from 'react'
 // const { v4: uuidv4 } = require('uuid')
 import _ from 'lodash'
 
-export const GlobalContext = createContext({})
+export const GlobalContext = React.createContext({})
 
 export const GlobalProvider = ({
   children,
@@ -71,8 +70,8 @@ export const GlobalProvider = ({
   advancedInput?: boolean
   placeHolder?: string
 }) => {
-  const [currentUserData] = useState(currentUser)
-  const [data, setData] = useState<
+  const [currentUserData] = React.useState(currentUser)
+  const [data, setData] = React.useState<
     Array<{
       userId: string
       comId: string
@@ -94,16 +93,16 @@ export const GlobalProvider = ({
         | undefined
     }>
   >([])
-  const [editArr, setEdit] = useState<string[]>([])
-  const [replyArr, setReply] = useState<string[]>([])
+  const [editArr, setEdit] = React.useState<string[]>([])
+  const [replyArr, setReply] = React.useState<string[]>([])
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (commentData) {
       setData(commentData)
     }
   }, [commentData])
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (currentData) {
       currentData(data)
     }

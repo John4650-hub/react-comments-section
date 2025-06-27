@@ -1,10 +1,9 @@
-import React, { useRef, useEffect, useState, useContext } from 'react'
 import { GlobalContext } from '../../context/Provider'
 import Picker from 'emoji-picker-react'
 import './InputField.scss'
 
 function useOutsideAlerter(ref: any, setOpen: Function) {
-  useEffect(() => {
+  React.useEffect(() => {
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
         setOpen(!open)
@@ -34,12 +33,12 @@ const EmojiInput = ({
 }: EmojiInputProps) => {
   const [open, setOpen] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState<{ emoji?: any }>()
-  const wrapperRef = useRef(null)
+  const wrapperRef = React.useRef(null)
   useOutsideAlerter(wrapperRef, setOpen)
 
   const globalStore: any = useContext(GlobalContext)
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (chosenEmoji) {
       let newText = text + ' ' + chosenEmoji.emoji
       setText(newText)

@@ -1,11 +1,9 @@
 import './CommentStructure.scss'
-import { useContext } from 'react'
 import { GlobalContext } from '../../context/Provider'
 import InputField from '../InputField/Index'
 import { Menu, MenuItem } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/core.css'
 import DeleteModal from './DeleteModal'
-import React from 'react'
 
 interface CommentStructureProps {
   info: {
@@ -37,7 +35,7 @@ const CommentStructure = ({
   replyMode,
   showTimestamp
 }: CommentStructureProps) => {
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
   const currentUser = globalStore.currentUserData
 
   const optionsMenu = () => {

@@ -1,6 +1,4 @@
-import React from 'react'
 import './InputField.scss'
-import { useContext } from 'react'
 import { GlobalContext } from '../../context/Provider'
 import EmojiInput from './EmojiInput'
 
@@ -35,7 +33,7 @@ const RegularInput = ({
   setText,
   placeHolder
 }: RegularInputProps) => {
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
 
   return (
     <form

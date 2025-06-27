@@ -1,0 +1,41 @@
+name: Build react comment section for react v19+
+
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build react comment section
+        run: |
+          chmod +x work.sh
+          ./work.sh >> log.txt 2>&1 || true
+      - name: commit logs
+        run: |
+          mkdir log
+          cd log
+          gh repo clone John4650-hub/Pastebin
+          mv ../log.txt Pastebin
+          cd Pastebin
+          git config --global user.name "$GIT_USERNAME"
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git add .
+          git commit -m "logs from building react aoo"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TK }}
+          GIT_AUTHOR_EMAIL: johndelvin51@gmail.com
+          GIT_USERNAME: john4650-hub
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TK }}
+          repository: john4650-hub/Pastebin
+          directory: log/Pastebin
+      - name: upload react app build
+        run: |
+          gh release create "${{ github.run_number }}.0.0" index.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.TK }}

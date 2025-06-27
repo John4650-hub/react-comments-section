@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
-import { useContext } from 'react'
 import { GlobalContext } from '../../context/Provider'
 import { EditorState, ContentState, convertToRaw } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
@@ -34,14 +32,14 @@ const AdvancedInput = ({
   text,
   placeHolder
 }: AdvancedInputProps) => {
-  const [html, setHtml] = useState('<p></p>')
-  const globalStore: any = useContext(GlobalContext)
-  useEffect(() => {
+  const [html, setHtml] = React.useState('<p></p>')
+  const globalStore: any = React.useContext(GlobalContext)
+  React.useEffect(() => {
     if (text != '') {
       setHtml(text)
     }
   }, [text])
-  useEffect(() => {
+  React.useEffect(() => {
     if (html != '<p></p>') {
       setEditor(EditorState.createWithContent(contentState))
     }
@@ -51,15 +49,15 @@ const AdvancedInput = ({
   const contentState = ContentState.createFromBlockArray(
     contentBlock.contentBlocks
   )
-  const [editorState, setEditor] = useState(
+  const [editorState, setEditor] = React.useState(
     EditorState.createWithContent(contentState)
   )
-  const [editText, setEditText] = useState<string>('')
+  const [editText, setEditText] = React.useState<string>('')
 
   const onEditorStateChange: Function = (editorState: any) => {
     setEditor(editorState)
   }
-  useEffect(() => {
+  React.useEffect(() => {
     setEditText(
       draftToHtml(convertToRaw(editorState.getCurrentContent())).trim()
     )

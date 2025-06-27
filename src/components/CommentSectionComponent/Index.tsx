@@ -1,10 +1,8 @@
 import CommentStructure from '../CommentStructure.tsx/Index'
 import InputField from '../InputField/Index'
 import './CommentSection.css'
-import { useContext } from 'react'
 import { GlobalContext } from '../../context/Provider'
 import _ from 'lodash'
-import React from 'react'
 import LoginSection from '../LoginSection/LoginSection'
 import NoComments from './NoComments'
 
@@ -49,7 +47,7 @@ const CommentSection = ({
   const loginMode = () => {
     return <LoginSection loginLink={handleLogin} signUpLink={handleSignUp} />
   }
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
 
   const totalComments = () => {
     let count = 0

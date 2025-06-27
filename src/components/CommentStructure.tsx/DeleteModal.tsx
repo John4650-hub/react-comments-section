@@ -1,8 +1,6 @@
-import { useState, useContext } from 'react'
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
 import { GlobalContext } from '../../context/Provider'
-import React from 'react'
 
 interface DeleteModalProps {
   comId: string
@@ -10,10 +8,10 @@ interface DeleteModalProps {
 }
 
 const DeleteModal = ({ comId, parentId }: DeleteModalProps) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = React.useState(false)
   const onOpenModal = () => setOpen(true)
   const onCloseModal = () => setOpen(false)
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
 
   return (
     <div>
