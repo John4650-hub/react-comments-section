@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './InputField.scss'
 import { GlobalContext } from '../../context/Provider'
 import EmojiInput from './EmojiInput'

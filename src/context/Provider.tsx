@@ -1,3 +1,5 @@
+import React from 'react';
+
 // const { v4: uuidv4 } = require('uuid')
 import _ from 'lodash'
 

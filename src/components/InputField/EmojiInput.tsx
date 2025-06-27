@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { GlobalContext } from '../../context/Provider'
 import Picker from 'emoji-picker-react'
 import './InputField.scss'

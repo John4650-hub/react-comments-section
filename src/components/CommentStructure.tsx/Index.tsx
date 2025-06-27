@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './CommentStructure.scss'
 import { GlobalContext } from '../../context/Provider'
 import InputField from '../InputField/Index'

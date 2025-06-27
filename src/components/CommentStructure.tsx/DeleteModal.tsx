@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { GlobalContext } from '../../context/Provider'
 import Modal from 'react-modal';
 

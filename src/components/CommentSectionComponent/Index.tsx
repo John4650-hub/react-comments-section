@@ -1,3 +1,5 @@
+import React from 'react';
+
 import CommentStructure from '../CommentStructure.tsx/Index'
 import InputField from '../InputField/Index'
 import './CommentSection.css'
