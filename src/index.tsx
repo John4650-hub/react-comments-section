@@ -1,4 +1,5 @@
 import CommentSectionComponent from './components/CommentSectionComponent/Index'
+import React from 'react';
 import GlobalProvider from './context/Provider'
 import './Index.scss'
 
