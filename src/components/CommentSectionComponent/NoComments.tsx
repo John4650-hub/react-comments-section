@@ -1,4 +1,4 @@
-
+import React from 'react';
 const NoComments = () => {
   return (
     <div className='no-comDiv'>
