@@ -2,7 +2,6 @@ import './InputField.scss'
 import { GlobalContext } from '../../context/Provider'
 const { v4: uuidv4 } = require('uuid')
 import RegularInput from './RegularInput'
-import AdvancedInput from './AdvancedInput'
 
 interface InputFieldProps {
   formStyle?: object
@@ -117,21 +116,6 @@ const InputField = ({
 
   return (
     <div>
-      {globalStore.advancedInput ? (
-        <AdvancedInput
-          handleSubmit={handleSubmit}
-          text={mode === 'editMode' ? text : ''}
-          formStyle={formStyle}
-          mode={mode}
-          cancelBtnStyle={cancelBtnStyle}
-          submitBtnStyle={submitBtnStyle}
-          comId={comId}
-          imgDiv={imgDiv}
-          imgStyle={imgStyle}
-          customImg={customImg}
-          placeHolder={placeHolder}
-        />
-      ) : (
         <RegularInput
           formStyle={formStyle}
           imgDiv={imgDiv}
@@ -147,7 +131,6 @@ const InputField = ({
           setText={setText}
           placeHolder={placeHolder}
         />
-      )}
     </div>
   )
 }
