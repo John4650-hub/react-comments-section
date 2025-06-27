@@ -33,12 +33,12 @@ const EmojiInput = ({
   inputStyle,
   placeHolder
 }: EmojiInputProps) => {
-  const [open, setOpen] = useState(false)
-  const [chosenEmoji, setChosenEmoji] = useState<{ emoji?: any }>()
+  const [open, setOpen] = React.useState(false)
+  const [chosenEmoji, setChosenEmoji] = React.useState<{ emoji?: any }>()
   const wrapperRef = React.useRef(null)
   useOutsideAlerter(wrapperRef, setOpen)
 
-  const globalStore: any = useContext(GlobalContext)
+  const globalStore: any = React.useContext(GlobalContext)
 
   React.useEffect(() => {
     if (chosenEmoji) {
