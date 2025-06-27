@@ -75,7 +75,7 @@
     "@types/uuid": "latest",
     "draft-js": "latest",
     "draftjs-to-html": "latest",
-    "emoji-picker-react": "^3.5.1",,
+    "emoji-picker-react": "^3.5.1",
     "html-to-draftjs": "latest",
     "react-modal": "latest",
     "sass": "latest"
