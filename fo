@@ -1,2 +1,0 @@
-
-    "build": "microbundle-crl-with-assets --css-modules false --no-compress --format modern,cjs",
