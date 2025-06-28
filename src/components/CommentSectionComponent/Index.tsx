@@ -20,6 +20,7 @@ interface CommentSectionProps {
   titleStyle?: object
   customNoComment?: Function
   showTimestamp?: boolean
+  onTotalCommentsChange?: (total: number) => void 
 }
 
 const CommentSection = ({
@@ -28,6 +29,7 @@ const CommentSection = ({
   hrStyle,
   titleStyle,
   customNoComment,
+  onTotalCommentsChange,
   showTimestamp = true
 }: CommentSectionProps) => {
   const handleLogin = () => {
@@ -59,6 +61,12 @@ const CommentSection = ({
     })
     return count
   }
+
+  React.useEffect(() => {
+  if (typeof onTotalCommentsChange === 'function') {
+    onTotalCommentsChange(totalComments())
+  }
+}, [globalStore.data, onTotalCommentsChange])
 
   return (
     <div className='overlay' style={overlayStyle}>
