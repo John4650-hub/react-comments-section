@@ -20,7 +20,6 @@ interface CommentSectionProps {
   titleStyle?: object
   customNoComment?: Function
   showTimestamp?: boolean
-  onTotalCommentsChange?: (total: number) => void 
 }
 
 const CommentSection = ({
@@ -29,7 +28,6 @@ const CommentSection = ({
   hrStyle,
   titleStyle,
   customNoComment,
-  onTotalCommentsChange,
   showTimestamp = true
 }: CommentSectionProps) => {
   const handleLogin = () => {
