@@ -16,6 +16,7 @@ interface CommentSectionProps {
     onLogin?: () => void
     onSignUp?: () => void
   }
+
   replyTop?: boolean
   customImg?: string
   inputStyle?: object
@@ -28,6 +29,7 @@ interface CommentSectionProps {
   commentsCount?: number
   hrStyle?: object
   titleStyle?: object
+  onTotalCommentsChange?:Function
   onSubmitAction?: Function
   onDeleteAction?: Function
   onReplyAction?: Function
@@ -79,6 +81,7 @@ export const CommentSection = ({
   hrStyle,
   titleStyle,
   removeEmoji,
+  onTotalCommentsChange,
   onSubmitAction,
   onDeleteAction,
   onReplyAction,
@@ -100,6 +103,7 @@ export const CommentSection = ({
       imgStyle={imgStyle}
       commentsCount={commentsCount}
       commentData={commentData}
+      onTotalCommentsChange={onTotalCommentsChange}
       onSubmitAction={onSubmitAction}
       onDeleteAction={onDeleteAction}
       onReplyAction={onReplyAction}

@@ -17,6 +17,7 @@ export const GlobalProvider = ({
   imgStyle,
   commentsCount,
   commentData,
+  onTotalCommentsChange,
   onSubmitAction,
   onDeleteAction,
   onReplyAction,
@@ -64,6 +65,7 @@ export const GlobalProvider = ({
         }>
       | undefined
   }>
+  onTotalCommentsChange?: Function
   onSubmitAction?: Function
   onDeleteAction?: Function
   onReplyAction?: Function
