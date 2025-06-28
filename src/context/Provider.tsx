@@ -249,7 +249,7 @@ export const GlobalProvider = ({
         cancelBtnStyle: cancelBtnStyle,
         imgStyle: imgStyle,
         commentsCount: commentsCount,
-        onTotalCommentsChange:onTotalCommentsChange
+        onTotalCommentsChange:onTotalCommentsChange,
         onSubmitAction: onSubmitAction,
         onDeleteAction: onDeleteAction,
         onReplyAction: onReplyAction,
