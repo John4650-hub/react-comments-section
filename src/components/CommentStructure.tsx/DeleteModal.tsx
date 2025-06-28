@@ -29,7 +29,7 @@ const DeleteModal = ({ comId, parentId }: DeleteModalProps) => {
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    zIndex:1000
+    zIndex:10000
   }
 };
 
