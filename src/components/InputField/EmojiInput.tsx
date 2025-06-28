@@ -3,6 +3,8 @@ import React from 'react';
 import { GlobalContext } from '../../context/Provider'
 import Picker from 'emoji-picker-react'
 import './InputField.scss'
+import TextareaAutosize from 'react-textarea-autosize';
+
 
 function useOutsideAlerter(ref: any, setOpen: Function) {
   React.useEffect(() => {
@@ -54,8 +56,9 @@ const EmojiInput = ({
 
   return (
     <div className='emoji-input'>
-      <textarea
-        rows={6}
+      <TextareaAutosize
+        maxRows={6}
+        minRows={1}
         cols={40}
         className='postComment'
         style={
@@ -66,7 +69,7 @@ const EmojiInput = ({
         placeholder={placeHolder ? placeHolder : 'Type your reply here.'}
         value={text}
         onChange={(e) => setText(e.target.value)}
-      ></textarea>
+      />
       <div className='emoji-icon' onClick={() => setOpen(!open)}></div>
       {open ? (
         <div ref={wrapperRef}>

@@ -78,6 +78,7 @@
     "emoji-picker-react": "^3.5.1",
     "html-to-draftjs": "latest",
     "react-modal": "latest",
-    "sass": "latest"
+    "sass": "latest",
+    "react-textarea-autosize":"latest"
   }
 }

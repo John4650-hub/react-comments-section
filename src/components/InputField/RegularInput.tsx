@@ -3,6 +3,7 @@ import React from 'react';
 import './InputField.scss'
 import { GlobalContext } from '../../context/Provider'
 import EmojiInput from './EmojiInput'
+import TextareaAutosize from 'react-textarea-autosize';
 
 interface RegularInputProps {
   formStyle?: object
@@ -61,8 +62,9 @@ const RegularInput = ({
         </a>
       </div>
       {globalStore.removeEmoji ? (
-        <textarea
-          rows={6}
+        <TextareaAutosize
+          maxRows={6}
+          minRows={1}
           cols={40}
           className='postComment'
           style={
@@ -73,7 +75,7 @@ const RegularInput = ({
           placeholder={placeHolder ? placeHolder : 'Type your reply here.'}
           value={text}
           onChange={(e) => setText(e.target.value)}
-        ></textarea>
+        />
       ) : (
         <EmojiInput
           text={text}
