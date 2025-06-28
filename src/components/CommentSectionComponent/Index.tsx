@@ -63,11 +63,11 @@ const CommentSection = ({
   }
 
   React.useEffect(() => {
-    console.log('Effect ran:', { data: globalStore.data, globalStore.onTotalCommentsChange })
+    console.log('Effect ran:', { data: globalStore.data, func:globalStore.onTotalCommentsChange })
   if (typeof globalStore.onTotalCommentsChange === 'function') {
     globalStore.onTotalCommentsChange(totalComments())
   }
-}, [globalStore.data, onTotalCommentsChange])
+}, [globalStore.data])
 
   return (
     <div className='overlay' style={overlayStyle}>
