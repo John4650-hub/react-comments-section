@@ -54,7 +54,9 @@ const EmojiInput = ({
 
   return (
     <div className='emoji-input'>
-      <input
+      <textarea
+        rows={6}
+        cols={40}
         className='postComment'
         style={
           mode === 'replyMode' || mode === 'editMode'
@@ -65,7 +67,7 @@ const EmojiInput = ({
         type='text'
         value={text}
         onChange={(e) => setText(e.target.value)}
-      />
+      </textarea>
       <div className='emoji-icon' onClick={() => setOpen(!open)}></div>
       {open ? (
         <div ref={wrapperRef}>
