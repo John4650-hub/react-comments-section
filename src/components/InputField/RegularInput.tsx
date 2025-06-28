@@ -61,18 +61,19 @@ const RegularInput = ({
         </a>
       </div>
       {globalStore.removeEmoji ? (
-        <input
+        <textarea
+          rows="6"
+          col="40"
           className='postComment'
           style={
             mode === 'replyMode' || mode === 'editMode'
               ? globalStore.replyInputStyle
               : globalStore.inputStyle || inputStyle
           }
-          type='text'
           placeholder={placeHolder ? placeHolder : 'Type your reply here.'}
           value={text}
           onChange={(e) => setText(e.target.value)}
-        />
+        ></textarea>
       ) : (
         <EmojiInput
           text={text}
