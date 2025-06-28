@@ -64,7 +64,6 @@ const EmojiInput = ({
             : globalStore.inputStyle || inputStyle
         }
         placeholder={placeHolder ? placeHolder : 'Type your reply here.'}
-        type='text'
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></textarea>
