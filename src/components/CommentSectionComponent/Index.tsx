@@ -61,7 +61,6 @@ const CommentSection = ({
   }
 
   React.useEffect(() => {
-    console.log('Effect ran:', { data: globalStore.data, func:globalStore.onTotalCommentsChange })
   if (typeof globalStore.onTotalCommentsChange === 'function') {
     globalStore.onTotalCommentsChange(totalComments())
   }
