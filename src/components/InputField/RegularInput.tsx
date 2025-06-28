@@ -63,7 +63,7 @@ const RegularInput = ({
       {globalStore.removeEmoji ? (
         <textarea
           rows="6"
-          col="40"
+          cols="40"
           className='postComment'
           style={
             mode === 'replyMode' || mode === 'editMode'
